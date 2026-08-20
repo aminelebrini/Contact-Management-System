@@ -64,6 +64,7 @@ if __name__ == "__main__":
                     print("No contacts found.")
 
                 id = int(input("please inter the id for contact : "))
+
                 removecontact_controller.remove_contact(id)
 
             case 4:
