@@ -2,8 +2,8 @@ from services.add_contactService import AddContactService
 from core.datavalidation import DataValidation
 
 class AddContactController:
-    def __init__(self):
-        self.addcontactservice = AddContactService()
+    def __init__(self, contact_book):
+        self.addcontactservice = AddContactService(contact_book)
         self.data_validation = DataValidation()
 
     def addcontact(self,data):

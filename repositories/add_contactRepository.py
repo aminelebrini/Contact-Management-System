@@ -2,8 +2,8 @@ from models.Contact import Contact
 from models.ContactBook import ContactBook
 
 class AddContactRepository:
-    def __init__(self):
-        pass
+    def __init__(self, contact_book):
+        self.contact_book = contact_book
 
     def addcontact(self, data):
         new_contact = Contact(
@@ -13,9 +13,9 @@ class AddContactRepository:
             email=data["email"]
         )
 
-        # contact_book = ContactBook.add_contact(new_contact)
+        new_contact_book = self.contact_book.add_contact(new_contact)
 
-        # if(contact_book):
-        #     return contact_book
-        # else:
-        #     return None
+        if(new_contact_book):
+            return new_contact_book
+        else:
+            return None

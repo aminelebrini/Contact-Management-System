@@ -1,8 +1,15 @@
+from models.ContactBook import ContactBook
 from controllers.add_contactControllers import AddContactController
+from controllers.display_contactController import DisplayContactController
+
 
 if __name__ == "__main__":
 
-    addcon = AddContactController()
+    contact_book = ContactBook()
+
+    addcontact_controller = AddContactController(contact_book)
+    displaycontact_controller = DisplayContactController(contact_book)
+    
 
     id = ""
     full_name = ""
@@ -16,7 +23,7 @@ if __name__ == "__main__":
 
         print("""
             1 - Add Contact
-            2 - Modify Contact
+            2 - Display Contacts
             3 - Remove Contact
             4 - Search for Contact
             5 - Import Contact from CSV
@@ -37,13 +44,16 @@ if __name__ == "__main__":
                             "phone" : phone,
                             "email" : email
                                    }
-                addcon.addcontact(data)
+                addcontact_controller.addcontact(data)
 
             case 2:
-                print("Modify Contact")
-
-            case 3:
-                print("Remove Contact")
+                print("These are your registered contacts: ")
+                contacts = displaycontact_controller.get_contact_data()
+                if contacts:
+                    for contact in contacts:
+                        print(f"ID: {contact.id}, Name: {contact.full_name}, Phone: {contact.phone}, Email: {contact.email}")
+                else:
+                    print("No contacts found.")
 
             case 4:
                 print("Search Contact")
