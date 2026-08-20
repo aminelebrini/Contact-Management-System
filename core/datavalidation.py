@@ -2,6 +2,12 @@ class DataValidation:
     def __init__(self):
         pass
 
+    def validate_id(self,id):
+        if(id.isdigit()):
+            return True
+        else:
+            return False
+
     def validatefull_name(self,full_name):
         for char in full_name:
             if(char.isdigit()):

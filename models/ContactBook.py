@@ -1,7 +1,7 @@
 class ContactBook:
     def __init__(self):
       self.contacts = []
-      
+
     def add_contact(self, contact):
         self.contacts.append(contact)
 
@@ -12,6 +12,13 @@ class ContactBook:
                 i.phone = contact.phone
                 i.email = contact.email
                 return
+
+    def remove_contact(self, id):
+        for i in self.contacts:
+            if i.id == id:
+                self.contacts.remove(i)
+
+        return self.contacts
 
     def display_contact(self):
         return self.contacts

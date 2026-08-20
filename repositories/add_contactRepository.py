@@ -1,5 +1,4 @@
 from models.Contact import Contact
-from models.ContactBook import ContactBook
 
 class AddContactRepository:
     def __init__(self, contact_book):
