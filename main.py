@@ -2,7 +2,7 @@ from models.ContactBook import ContactBook
 from controllers.add_contactControllers import AddContactController
 from controllers.display_contactController import DisplayContactController
 from controllers.remove_contactController import RemoveContactController
-
+from controllers.import_contactController import ImportContactController
 if __name__ == "__main__":
 
     contact_book = ContactBook()
@@ -10,6 +10,7 @@ if __name__ == "__main__":
     addcontact_controller = AddContactController(contact_book)
     displaycontact_controller = DisplayContactController(contact_book)
     removecontact_controller = RemoveContactController(contact_book)
+    importcontact_controller = ImportContactController(contact_book)
     
 
     id = ""
@@ -26,7 +27,7 @@ if __name__ == "__main__":
             1 - Add Contact
             2 - Display Contacts
             3 - Remove Contact
-            5 - Import Contact from CSV
+            4 - Import Contact from CSV
             0 - Exit
             """)
 
@@ -68,8 +69,16 @@ if __name__ == "__main__":
                 removecontact_controller.remove_contact(id)
 
             case 4:
-                print("Import Contact")
+                filename = input("Enter the file name: ")
+                try:
+                    importcontact_controller.import_contacts(filename)
+                    print("Contacts imported successfully.")
 
+                except FileNotFoundError:
+                    print("File not found.")
+
+                except ValueError:
+                    print("Invalid contact data.")
             case 0:
                 print("Goodbye!")
                 break
