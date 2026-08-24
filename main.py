@@ -13,7 +13,6 @@ if __name__ == "__main__":
     importcontact_controller = ImportContactController(contact_book)
     
 
-    id = ""
     full_name = ""
     phone = ""
     email = ""
@@ -35,12 +34,11 @@ if __name__ == "__main__":
 
         match n:
             case 1:
-                id = int(input("enter the contact id : "))
+    
                 full_name = str(input("enter the fullname : "))
                 phone = str(input("enter the phone number : "))
                 email = str(input("enter the email : "))
                 data = {
-                            "id" : id,
                             "full_name": full_name,
                             "phone" : phone,
                             "email" : email
@@ -52,7 +50,7 @@ if __name__ == "__main__":
                 contacts = displaycontact_controller.get_contact_data()
                 if contacts:
                     for contact in contacts:
-                        print(f"ID: {contact.id}, Name: {contact.full_name}, Phone: {contact.phone}, Email: {contact.email}")
+                        print(f"Name: {contact.full_name}, Phone: {contact.phone}, Email: {contact.email}")
                 else:
                     print("No contacts found.")
 
@@ -60,13 +58,13 @@ if __name__ == "__main__":
                 contacts = displaycontact_controller.get_contact_data()
                 if contacts:
                     for contact in contacts:
-                        print(f"ID: {contact.id}, Name: {contact.full_name}, Phone: {contact.phone}, Email: {contact.email}")
+                        print(f"Name: {contact.full_name}, Phone: {contact.phone}, Email: {contact.email}")
                 else:
                     print("No contacts found.")
 
                 id = int(input("please inter the id for contact : "))
 
-                removecontact_controller.remove_contact(id)
+                removecontact_controller.remove_contact(full_name)
 
             case 4:
                 filename = input("Enter the file name: ")

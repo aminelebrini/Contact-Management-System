@@ -4,6 +4,13 @@ class ContactBook:
 
     def add_contact(self, contact):
         self.contacts.append(contact)
+        with open("data/contacts.txt", "a", encoding="utf-8") as file:
+            for contact in self.contacts:
+                file.write(
+                    f"{contact.full_name},"
+                    f"{contact.phone},"
+                    f"{contact.email}\n"
+                )
 
     def modify_contact(self, contact):
         for i in self.contacts:
@@ -21,4 +28,4 @@ class ContactBook:
         return self.contacts
 
     def display_contact(self):
-        return self.contacts
+        

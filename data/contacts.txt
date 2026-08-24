@@ -1,22 +1,2 @@
-contacts = [
-    (1, "Amine Lebrini", "0612345678", "amine.lebrini@gmail.com"),
-    (2, "Afaf Krt", "0623456789", "afaf.krt@gmail.com"),
-    (3, "Sara El Mansouri", "0634567890", "sara.elmansouri@gmail.com"),
-    (4, "Nour El Houda", "0645678901", "nour.elhouda@gmail.com"),
-    (5, "Omar Bennani", "0656789012", "omar.bennani@gmail.com"),
-    (6, "Salma Idrissi", "0667890123", "salma.idrissi@gmail.com"),
-    (7, "Ayoub Chraibi", "0678901234", "ayoub.chraibi@gmail.com"),
-    (8, "Hiba Amrani", "0689012345", "hiba.amrani@gmail.com"),
-    (9, "Hamza Tazi", "0690123456", "hamza.tazi@gmail.com"),
-    (10, "Imane Berrada", "0601234567", "imane.berrada@gmail.com"),
-    (11, "Zakaria Naciri", "0613456789", "zakaria.naciri@gmail.com"),
-    (12, "Meryem Fassi", "0624567890", "meryem.fassi@gmail.com"),
-    (13, "Mehdi Bennouna", "0635678901", "mehdi.bennouna@gmail.com"),
-    (14, "Aya Zahra", "0646789012", "aya.zahra@gmail.com"),
-    (15, "Rayan El Idrissi", "0657890123", "rayan.elidrissi@gmail.com"),
-    (16, "Khadija Ouazzani", "0668901234", "khadija.ouazzani@gmail.com"),
-    (17, "Anas Filali", "0679012345", "anas.filali@gmail.com"),
-    (18, "Chaimae Rami", "0680123456", "chaimae.rami@gmail.com"),
-    (19, "Bilal Kabbaj", "0691234567", "bilal.kabbaj@gmail.com"),
-    (20, "Lina El Alami", "0602345678", "lina.elalami@gmail.com"),
-]
+
+asdfghj,1234567890,asdfghj@gmail.com
