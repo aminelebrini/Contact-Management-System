@@ -1,3 +1,5 @@
+from models.Contact import Contact
+
 class ContactBook:
     def __init__(self):
       self.contacts = []
@@ -20,12 +22,20 @@ class ContactBook:
                 i.email = contact.email
                 return
 
-    def remove_contact(self, id):
-        for i in self.contacts:
-            if i.id == id:
-                self.contacts.remove(i)
+    def remove_contact(self, full_name):
+        with open("data/contacts.txt", "r", encoding="utf-8") as file:
+            lines = file.readlines()
 
-        return self.contacts
+        remaining = [line for line in lines if line.strip() and line.split(",")[0] != full_name]
+
+        with open("data/contacts.txt", "w", encoding="utf-8") as file:
+            file.writelines(remaining)
 
     def display_contact(self):
-        
+        contacts = []
+        with open("data/contacts.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                parts = line.strip().split(",")
+                if len(parts) == 3:
+                    contacts.append(Contact(parts[0], parts[1], parts[2]))
+        return contacts
